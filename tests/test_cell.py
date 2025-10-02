@@ -2,8 +2,6 @@
 Unit tests for Cell class.
 """
 import pytest
-import sys
-import os
 
 from pgol.cell import AliveState
 
