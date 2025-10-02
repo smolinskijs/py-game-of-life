@@ -2,7 +2,7 @@
 Grid/Board class that manages the collection of cells.
 Implements the core Game of Life logic.
 """
-from src.cell import Cell, AliveState, DeadState
+from pgol.cell import Cell, AliveState, DeadState
 
 
 class Grid:

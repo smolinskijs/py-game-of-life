@@ -3,9 +3,9 @@ Main entry point for Conway's Game of Life.
 """
 import pygame
 import sys
-from src.grid import Grid
-from src.game import Game
-from src.renderer import Renderer, GridRenderStrategy
+from pgol.grid import Grid
+from pgol.game import Game
+from pgol.renderer import Renderer, GridRenderStrategy
 
 
 class GameOfLife:
