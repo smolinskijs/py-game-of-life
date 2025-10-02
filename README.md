@@ -15,7 +15,7 @@ Conway's Game of Life implementation using design patterns and Pygame.
 
 ```
 py-game-of-life/
-├── src/                    # Source code
+├── pgol/                    # Source code
 │   ├── __init__.py
 │   ├── cell.py            # Cell class with State pattern
 │   ├── grid.py            # Grid/Board management
@@ -34,21 +34,27 @@ py-game-of-life/
 
 ## Installation
 
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+1. (Recommended) Create a virtual environment:
+  ```bash
+  python3 -m venv venv_pgol
+  source venv_pgol/bin/activate  # On Windows use: venv\Scripts\activate
+  ```
+
+2. Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 ## Usage
 
 Run the game:
 ```bash
-python -m src.main
+python -m pgol.main
 ```
 
 Or:
 ```bash
-cd src
+cd pgol
 python main.py
 ```
 
@@ -64,12 +70,7 @@ python main.py
 
 Run all tests:
 ```bash
-python -m unittest discover tests
-```
-
-Run specific test file:
-```bash
-python -m unittest tests.test_cell
+pytest tests
 ```
 
 ## Design Patterns
