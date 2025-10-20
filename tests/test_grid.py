@@ -5,6 +5,7 @@ Unit tests for Grid class.
 # klasa Grid, konstruktor i metoda get_cell() (można użyć mocka )
 import pytest
 from pgol.grid import Grid
+from unittest.mock import Mock
 
 @pytest.fixture
 def square_grid():
@@ -34,3 +35,10 @@ def test_get_cell_inside_scope(square_grid):
     assert square_grid.get_cell(y,x) == square_grid.cells[x][y]
     assert square_grid.get_cell(x,y) == square_grid.cells[y][x]
     assert square_grid.get_cell(y,y) == square_grid.cells[y][y]
+
+def test_get_cell(square_grid):
+    x = 0
+    y = 3
+    square_grid.get_cell = Mock()
+    square_grid.get_cell(x,y)
+    square_grid.get_cell.assert_called_once()
