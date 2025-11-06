@@ -17,7 +17,7 @@ def test_constructor_width(square_grid):
 def test_constructor_height(square_grid):
     assert square_grid.height == 4
 
-def test_consturctor_cells(square_grid):
+def test_constructor_cells(square_grid):
     assert [len(_) for _ in square_grid.cells] == [4,4,4,4]
 
 def test_get_cell_outside_scope(square_grid):
