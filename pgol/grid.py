@@ -8,7 +8,7 @@ from pgol.cell import Cell, AliveState, DeadState
 class Grid:
     """Represents the game board with a grid of cells."""
     
-    def __init__(self, width, height):
+    def __init__(self, width: int, height: int):
         self.width = width
         self.height = height
         self.cells = [[Cell() for _ in range(width)] for _ in range(height)]
