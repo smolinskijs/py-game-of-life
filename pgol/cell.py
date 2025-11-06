@@ -2,7 +2,7 @@
 Cell class representing a single cell in the Game of Life.
 Uses State pattern for alive/dead states.
 """
-
+import time
 
 class CellState:
     """Abstract base class for cell states."""

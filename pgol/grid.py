@@ -8,7 +8,7 @@ from pgol.cell import Cell, AliveState, DeadState
 class Grid:
     """Represents the game board with a grid of cells."""
     
-    def __init__(self, width, height):
+    def __init__(self, width: int, height: int):
         self.width = width
         self.height = height
         self.cells = [[Cell() for _ in range(width)] for _ in range(height)]
@@ -29,7 +29,7 @@ class Grid:
         if 0 <= x < self.width and 0 <= y < self.height:
             self.cells[y][x].set_dead()
     
-    def toggle_cell(self, x, y):
+    def toggle_cell(self, x, y) -> None:
         """Toggle cell state at position (x, y)."""
         cell = self.get_cell(x, y)
         if cell:
@@ -38,7 +38,7 @@ class Grid:
             else:
                 cell.set_alive()
     
-    def count_alive_neighbors(self, x, y):
+    def count_alive_neighbors(self, x, y) -> int:
         """Count alive neighbors for cell at position (x, y)."""
         count = 0
         for dy in range(-1, 2):

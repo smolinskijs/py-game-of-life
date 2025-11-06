@@ -79,3 +79,7 @@ class Game:
         """Update game (called every frame)."""
         if self.is_running:
             self.step()
+
+    def silent_update(self):
+        self.grid.update()
+        self.generation += 1
