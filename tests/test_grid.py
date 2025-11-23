@@ -66,3 +66,17 @@ def test_count_alive_neighbors(square_grid, x, y, activated_cells, result):
     #                 if self.cells[ny][nx].is_alive():
     #                     count += 1
     #     return count
+
+def test_toggle_alive_to_dead(square_grid):
+   for y in range(square_grid.width):
+      for x in range(square_grid.height):
+        square_grid.set_cell_alive(x,y)
+        square_grid.toggle_cell(x,y)
+        assert square_grid.cells[y][x].is_alive() == False
+
+def test_toggle_dead_to_alive(square_grid):
+   for y in range(square_grid.width):
+      for x in range(square_grid.height):
+        square_grid.set_cell_dead(x,y)
+        square_grid.toggle_cell(x,y)
+        assert square_grid.cells[y][x].is_alive() == True
