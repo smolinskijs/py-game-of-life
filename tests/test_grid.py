@@ -80,3 +80,27 @@ def test_toggle_dead_to_alive(square_grid):
         square_grid.set_cell_dead(x,y)
         square_grid.toggle_cell(x,y)
         assert square_grid.cells[y][x].is_alive() == True
+
+@pytest.mark.parametrize("x,y, untoggled_cells", [
+   (0,0,[(0,1),(1,0),(1,1)]),
+   (3,3,[(2,3),(3,2),(2,2)])
+])
+def test_toggle_alive_to_dead_negative(square_grid, x, y, untoggled_cells):
+   square_grid.set_cell_alive(x,y)
+   for cell in untoggled_cells:
+      square_grid.set_cell_dead(cell[0], cell[1])
+   square_grid.toggle_cell(x,y)
+   for cell in untoggled_cells:
+      assert square_grid.cells[cell[1]][cell[0]].is_alive() == False
+
+@pytest.mark.parametrize("x,y, untoggled_cells", [
+   (0,0,[(0,1),(1,0),(1,1)]),
+   (3,3,[(2,3),(3,2),(2,2)])
+])
+def test_toggle_alive_to_dead_negative(square_grid, x, y, untoggled_cells):
+   square_grid.set_cell_dead(x,y)
+   for cell in untoggled_cells:
+      square_grid.set_cell_alive(cell[0], cell[1])
+   square_grid.toggle_cell(x,y)
+   for cell in untoggled_cells:
+      assert square_grid.cells[cell[1]][cell[0]].is_alive() == True
